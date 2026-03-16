@@ -3,8 +3,6 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 
-const documentRoutes = require('./routes/documents');
-
 const app = express();
 
 // ─── Middleware ────────────────────────────────────────────────────────────────
@@ -26,6 +24,7 @@ app.use((req, res, next) => {
 });
 
 // ─── Routes ───────────────────────────────────────────────────────────────────
+const documentRoutes = require('./routes/documents');
 app.use('/api/documents', documentRoutes);
 
 // Health check endpoint
